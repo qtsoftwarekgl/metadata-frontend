@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+
+  metadata-frontend-server:
+    image: registry.gitlab.com/rbc5/metadata-frontend:latest
+    container_name: matadata-frontend
+    ports:
+      - "7801:80"
+    restart: always
+    logging:
+      options:
+        max-size: 5m
+    deploy:
+      resources:
+        limits:
+          memory: 2048M
+        reservations:
+          memory: 1024M
+
